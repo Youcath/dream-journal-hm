@@ -1,0 +1,56 @@
+{
+  "app": {
+    "signingConfigs": [
+      {
+        "name": "default",
+        "type": "HarmonyOS",
+        "material": {
+          "certpath": "C:\\Users\\Huya\\.ohos\\config\\default_dreamjournal2_9n1nC-MQ3hIg_1J8pf3Oj9fhl6gfwEhqITPGGtuZvEk=.cer",
+          "keyAlias": "debugKey",
+          "keyPassword": "0000001B68B8999B200F4F8AB88431C03A4A4A1D5C9E00AC2D100568DF79146311827302030190A82E553E",
+          "profile": "C:\\Users\\Huya\\.ohos\\config\\default_dreamjournal2_9n1nC-MQ3hIg_1J8pf3Oj9fhl6gfwEhqITPGGtuZvEk=.p7b",
+          "signAlg": "SHA256withECDSA",
+          "storeFile": "C:\\Users\\Huya\\.ohos\\config\\default_dreamjournal2_9n1nC-MQ3hIg_1J8pf3Oj9fhl6gfwEhqITPGGtuZvEk=.p12",
+          "storePassword": "0000001BA179D354CBCA632252B01D475E2C4ED701C232673E0DCA8F82D3A0402887868138C3205A69F648"
+        }
+      }
+    ],
+    "products": [
+      {
+        "name": "default",
+        "signingConfig": "default",
+        "targetSdkVersion": "6.0.0(20)",
+        "compatibleSdkVersion": "5.0.3(15)",
+        "runtimeOS": "HarmonyOS",
+        "buildOption": {
+          "strictMode": {
+            "caseSensitiveCheck": true,
+            "useNormalizedOHMUrl": true
+          }
+        }
+      }
+    ],
+    "buildModeSet": [
+      {
+        "name": "debug",
+      },
+      {
+        "name": "release"
+      }
+    ]
+  },
+  "modules": [
+    {
+      "name": "entry",
+      "srcPath": "./entry",
+      "targets": [
+        {
+          "name": "default",
+          "applyToProducts": [
+            "default"
+          ]
+        }
+      ]
+    }
+  ]
+}
