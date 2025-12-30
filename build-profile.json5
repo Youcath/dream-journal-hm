@@ -7,11 +7,11 @@
         "material": {
           "certpath": "C:\\Users\\Huya\\.ohos\\config\\default_dreamjournal2_9n1nC-MQ3hIg_1J8pf3Oj9fhl6gfwEhqITPGGtuZvEk=.cer",
           "keyAlias": "debugKey",
-          "keyPassword": "0000001B68B8999B200F4F8AB88431C03A4A4A1D5C9E00AC2D100568DF79146311827302030190A82E553E",
+          "keyPassword": "0000001BEB747652422998CD647FA295E3A6FA0C79E7B8BB5575D1E73738C120B4F1756F7708D89854915D",
           "profile": "C:\\Users\\Huya\\.ohos\\config\\default_dreamjournal2_9n1nC-MQ3hIg_1J8pf3Oj9fhl6gfwEhqITPGGtuZvEk=.p7b",
           "signAlg": "SHA256withECDSA",
           "storeFile": "C:\\Users\\Huya\\.ohos\\config\\default_dreamjournal2_9n1nC-MQ3hIg_1J8pf3Oj9fhl6gfwEhqITPGGtuZvEk=.p12",
-          "storePassword": "0000001BA179D354CBCA632252B01D475E2C4ED701C232673E0DCA8F82D3A0402887868138C3205A69F648"
+          "storePassword": "0000001BD1AD23B7E05602A9D412E4E2E41A70B87919D1159F04EE9270C961C8362A592503391965B44AFA"
         }
       }
     ],
