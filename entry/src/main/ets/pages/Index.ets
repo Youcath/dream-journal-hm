@@ -8,6 +8,7 @@ struct Index {
   @State private loadError: boolean = false;
   @State private isLoading: boolean = true;
   private storageBridge: HarmonyStorage | MemoryStorage = new MemoryStorage();
+  readonly url = 'https://xiaojia736.github.io/dream-journal/';
 
   aboutToAppear() {
     // 初始化 Web 引擎，确保页面可以正常加载
@@ -26,10 +27,25 @@ struct Index {
     }
   }
 
+  onPageShow() {
+    // 热启动 / 后台回到前台：如果上次加载失败，则触发一次重载
+    this.reloadUrlIfLastFailed();
+  }
+
+  private reloadUrlIfLastFailed(): void {
+    if (!this.loadError) {
+      return;
+    }
+    try {
+      this.controller.loadUrl(this.url);
+    } catch (e) {
+    }
+  }
+
   build() {
     Stack() {
       Web({
-        src: 'https://xiaojia736.github.io/dream-journal/',
+        src: this.url,
         controller: this.controller
       })
         .javaScriptAccess(true)
