@@ -72,7 +72,7 @@ struct Index {
 
       if (!this.loadError && this.isLoading) {
         Column({ space: 12 }) {
-          Image($r('app.media.foreground'))
+          Image($r('app.media.startIcon'))
             .width(64)
             .height(64)
             .objectFit(ImageFit.Contain)
