@@ -1,5 +1,6 @@
 import { webview } from '@kit.ArkWeb';
 import dataPreferences from '@ohos.data.preferences';
+import { HarmonyExport } from '../bridge/HarmonyExport';
 
 @Entry
 @Component
@@ -9,10 +10,19 @@ struct Index {
   @State private isLoading: boolean = true;
   private storageBridge: HarmonyStorage | MemoryStorage = new MemoryStorage();
   readonly url = 'https://xiaojia736.github.io/dream-journal/';
+  private exportBridge?: HarmonyExport;
 
   aboutToAppear() {
     // 初始化 Web 引擎，确保页面可以正常加载
     webview.WebviewController.initializeWebEngine();
+
+    // 导出桥接（对齐 Web 端的 window.AndroidExport.exportData）
+    try {
+      const ctx = getContext(this);
+      this.exportBridge = new HarmonyExport(ctx, this.controller);
+    } catch (e) {
+      this.exportBridge = undefined;
+    }
 
     // 创建持久化存储（同步 API），用于向 Web 注入 HarmonyStorage
     try {
@@ -54,6 +64,13 @@ struct Index {
           name: 'HarmonyStorage',
           object: this.storageBridge,
           methodList: ['getItem', 'setItem', 'removeItem'],
+          controller: this.controller
+        })
+        // 鸿蒙优先：window.HarmonyExport.exportData(jsonString)
+        .javaScriptProxy({
+          name: 'HarmonyExport',
+          object: this.exportBridge,
+          methodList: ['exportData'],
           controller: this.controller
         })
         .width('100%')
